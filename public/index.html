@@ -4,6 +4,8 @@
   <title>Beta IC</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bootstrap.min.css"
+  <link rel="stylesheet" href="index.css"
   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
   <script>
   // Initialize Firebase
@@ -99,8 +101,6 @@
       }
 
       #title {
-        color: #fff;
-        background-color: #4d90fe;
         font-size: 25px;
         font-weight: 500;
         padding: 6px 12px;
@@ -116,13 +116,10 @@
 <div class="Input">
   <h2>What's your name?</h2>
   <input class="nameInput" type="text" value="Name" placeholder="Name"</input>
-  <h2>Which city will you be travelling to?</h2>
+  <h2>Where will you be travelling to?</h2>
   <input
     <div class="pac-card" id="pac-card">
       <div>
-        <div id="title">
-          Enter destination location
-        </div>
         <div id="type-selector" class="pac-controls">
           <input type="radio" name="type" id="changetype-all" checked="checked">
           <label for="changetype-all">All</label>
@@ -278,7 +275,7 @@
 
 </form>
 <br>
-<a href="./itinerary.html"><button type="button" onclick="itinerary()">Create my vacation itinerary!</button></a>
+<a href="./itinerary.html"><button type="button" class="btn btn-primary" onclick="itinerary()">Create my vacation itinerary!</button></a>
 
 <div class="itinerary"></div>
 
