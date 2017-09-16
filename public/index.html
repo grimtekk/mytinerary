@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Beta IC</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
@@ -241,6 +241,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1W0gHh7ubG9bAMAuEsDgtiZWkM9fcP1Y&libraries=places&callback=initMap"
         async defer></script>
   </input>
+  <h2>How many days will you be travelling?</h2>
+  <input class="dayInput" type="number" value="1" min="1" max="30" placeholder="1"> </input>
   <h2>Please specify the month you will be travelling in</h2>
   <form action="/action_page.php">
   <select name="Month">
@@ -258,10 +260,6 @@
     <option value="December">December</option>
   </select>
 </form>
-  <h2>How many days will you be travelling?</h2>
-  <input class="dayInput" type="number" value="1" min="1" max="30" placeholder="1">
-</input>
-
 
   <div class="categories">
 	  <p>Choose a category</p>
