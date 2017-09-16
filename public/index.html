@@ -19,7 +19,7 @@
   </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="index.css" type="text/css"/>
-  <link rel="javascript" href="index.js" />
+  <script src="index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -29,27 +29,32 @@
 <body>
 
 <form id="main_form">
-<div class="cityInput">
-  <p>What's your name?</p>
+<div class="Input">
+  <h2>What's your name?</h2>
   <input class="nameInput" type="text" value="Name" placeholder="Name"</input>
-  <p>Which city would you like to travel to?</p>
-  <input class="cityInput" type="text" value="City Name" placeholder="City Name"></input>
+  <h2>Which city would you like to travel to?</h2>
+  <input class="cityName" type="text" value="City Name" placeholder="City Name"></input>
   <input class="countryInput" type="text" value="Country Name" placeholder="Country Name"></input>
-  <p>Please specify a date range for your itinerary</p>
+  <h2>Please specify the month you will be travelling in</h2>
   <input class="monthInput" type="text" value="Month" placeholder="Month"></input>
-  <input class="dateSInput" type="number" value="Date Start" placeholder="Date Start"></input>
-  <input class="dateEInput" type="number" value="Date End" placeholder="Date End"></input>
-	<p>Choose a category</p>
-	<ul class="arts">Arts & Entertainment</ul>
-  <ul class="events">Events</ul>
-  <ul class="food">Food & Drink</ul>
-  <ul class="night">Nightlife</ul>
-  <ul class="outdoor">Outdoors & Recreation</ul>
+  <h2>How many days will you be travelling?</h2>
+  <input class="dayInput" type="number" value="Length of Travel" placeholder="Length of Travel">
+
+  <div class="categories">
+	  <p>Choose a category</p>
+	  <ul class="arts">Arts & Entertainment</ul>
+    <ul class="events">Events</ul>
+    <ul class="food">Food & Drink</ul>
+    <ul class="night">Nightlife</ul>
+    <ul class="outdoor">Outdoors & Recreation</ul>
+  </div>
 </div>
 
 </form>
 
-<button type="button" onclick="itinerary()">Create my vacation iternary!</button>
+<a href="./itinerary.html"><button type="button" onclick="itinerary()">Create my vacation itinernary!</button></a>
+
+<div class="itinerary"></div>
 
 </body>
 </html>
