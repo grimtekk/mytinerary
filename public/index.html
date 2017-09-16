@@ -246,33 +246,37 @@
   <h2>Please specify the month you will be travelling in</h2>
   <form action="/action_page.php">
   <select name="Month">
-    <option value="January">January</option>
-    <option value="February">February</option>
-    <option value="March">March</option>
-    <option value="April">April</option>
-    <option value="May">June</option>
-    <option value="June">June</option>
-    <option value="July">July</option>
-    <option value="August">August</option>
-    <option value="September">September</option>
-    <option value="October">October</option>
-    <option value="November">November</option>
-    <option value="December">December</option>
+    <option value="january">January</option>
+    <option value="february">February</option>
+    <option value="march">March</option>
+    <option value="april">April</option>
+    <option value="may">June</option>
+    <option value="june">June</option>
+    <option value="july">July</option>
+    <option value="august">August</option>
+    <option value="september">September</option>
+    <option value="october">October</option>
+    <option value="november">November</option>
+    <option value="december">December</option>
   </select>
 </form>
 
   <div class="categories">
-	  <p>Choose a category</p>
-	  <ul class="arts">Arts & Entertainment</ul>
-    <ul class="events">Events</ul>
-    <ul class="food">Food & Drink</ul>
-    <ul class="night">Nightlife</ul>
-    <ul class="outdoor">Outdoors & Recreation</ul>
+	  <h2>What are you interested in doing during your time on vacation?</h2>
+    <form action="">
+    <input type="checkbox" name="categoryOne" value="arts and entertainment">Arts and Entertainment<br>
+    <input type="checkbox" name="categoryOne" value="active life">Interactive Activities<br>
+    <input type="checkbox" name="categoryOne" value="tours">Guided Tours<br>
+    <input type="checkbox" name="categoryOne" value="local flavour">Local Sights and Attractions<br>
+    <input type="checkbox" name="categoryOne" value="nightlife">Nightlife<br>
+    <input type="checkbox" name="categoryOne" value="shopping">Shopping<br>
+
+    </form>
   </div>
 </div>
 
 </form>
-
+<br>
 <a href="./itinerary.html"><button type="button" onclick="itinerary()">Create my vacation itinernary!</button></a>
 
 <div class="itinerary"></div>
