@@ -4,6 +4,19 @@
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDL5khdQVZpysS_4Lnyf2a4nAE6Jq3koRc",
+    authDomain: "hack-the-north-project.firebaseapp.com",
+    databaseURL: "https://hack-the-north-project.firebaseio.com",
+    projectId: "hack-the-north-project",
+    storageBucket: "hack-the-north-project.appspot.com",
+    messagingSenderId: "745523267678"
+  };
+  firebase.initializeApp(config);
+  </script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="index.css" type="text/css"/>
   <link rel="javascript" href="index.js" />
@@ -35,6 +48,8 @@
 </div>
 
 </form>
+
+<button type="button" onclick="itinerary()">Create my vacation iternary!</button>
 
 </body>
 </html>
