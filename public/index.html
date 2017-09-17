@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Beta IC</title>
+  <title>Vacatation Planner</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="bootstrap.min.css"
@@ -19,104 +19,54 @@
   };
   firebase.initializeApp(config);
   </script>
+  <!--Smooth Scrolling-->
+  <script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("button").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="index.css" type="text/css"/>
   <script src="index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <head>
-    <title>Place Autocomplete</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #description {
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-      }
-
-      #infowindow-content .title {
-        font-weight: bold;
-      }
-
-      #infowindow-content {
-        display: none;
-      }
-
-      #map #infowindow-content {
-        display: inline;
-      }
-
-      .pac-card {
-        margin: 10px 10px 0 0;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-        background-color: #fff;
-        font-family: Roboto;
-      }
-
-      #pac-container {
-        padding-bottom: 12px;
-        margin-right: 12px;
-      }
-
-      .pac-controls {
-        display: inline-block;
-        padding: 5px 11px;
-      }
-
-      .pac-controls label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 400px;
-      }
-
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
-
-      #title {
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-      }
-      </style>
-    </head>
   </head>
 
 
 <body>
+<h1>Mytinerary</h1>
+
 <span id="area1">
 
 <form id="main_form">
-<div class="Input">
+  <div id="nameDiv">
   <h2>What's your name?</h2>
-  <input class="nameInput" type="text" value="Name" placeholder="Name"</input>
+  <input class="nameInput" type="text" value="" placeholder="Name"></input><br/><br/>
+  <button type="button" class="btn btn-primary" onclick="location.href('#1');">Next</button>
+</div>
+
+<div id="cityDiv"><a id="1"></a>
   <h2>Where will you be travelling to?</h2>
   <input
     <div class="pac-card" id="pac-card">
@@ -136,13 +86,12 @@
         </div>
         </div>
       </div>
+      </div>
       <div id="pac-container">
         <input id="pac-input" type="text"
-            placeholder="Enter a location">
+            placeholder="Enter a location"></input>
       </div>
-    </div>
     <div id="map"></div>
-    <div id="infowindow-content">
       <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>
       <span id="place-address"></span>
@@ -239,9 +188,14 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1W0gHh7ubG9bAMAuEsDgtiZWkM9fcP1Y&libraries=places&callback=initMap"
         async defer></script>
-  </input>
+
+      <div id="dayDiv">
   <h2>How many days will you be travelling?</h2>
-  <input class="dayInput" type="number" value="1" min="1" max="30" placeholder="1"> </input>
+  <input id="dayInput" type="number" value="1" min="1" max="30" placeholder="1"> </input>
+</div>
+
+
+<div id="monthDiv">
   <h2>Please specify the month you will be travelling in</h2>
   <form action="/action_page.php">
   <select name="Month">
@@ -258,6 +212,7 @@
     <option value="november">November</option>
     <option value="december">December</option>
   </select>
+</div>
 </form>
 
   <div class="categories">
@@ -279,7 +234,7 @@
 
 <br>
 
-<div id="itinerary"></div>
+<div class="itinerary"></div>
 <div class="buttonWrap"><button id="button1" type="button" class="btn btn-primary" onclick="itinerary()">Create my vacation itinerary!</button></div>
 
 </body>

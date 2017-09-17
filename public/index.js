@@ -4,6 +4,9 @@ function itinerary() {
 
   var name = $(".nameInput").val();
   var numDay = $("select[name=Month]").val();
+  var length = document.getElementById("dayInput").val();
 
-  $("#itinerary").append(numDay);
+  for(i=0;i<length;i++) {
+    $(".itinerary").append(numDay);
+  }
 }
