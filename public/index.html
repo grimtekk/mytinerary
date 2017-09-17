@@ -63,7 +63,7 @@ $(document).ready(function(){
   <div id="nameDiv">
   <h2>What's your name?</h2>
   <input class="nameInput" type="text" value="" placeholder="Name"></input><br/><br/>
-  <button type="button" class="btn btn-primary" onclick="location.href('#1');">Next</button>
+  <button type="button" class="btn btn-primary" onclick="location.href = '#1';">Next</button>
 </div>
 
 <div id="cityDiv"><a id="1"></a>
@@ -95,7 +95,6 @@ $(document).ready(function(){
       <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>
       <span id="place-address"></span>
-    </div>
 
     <script>
       // This example requires the Places library. Include the libraries=places
@@ -188,14 +187,20 @@ $(document).ready(function(){
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1W0gHh7ubG9bAMAuEsDgtiZWkM9fcP1Y&libraries=places&callback=initMap"
         async defer></script>
+        <br/>
+    <button type="button" class="btn btn-primary" onclick="location.href = '#3';">Next</button>
 
-      <div id="dayDiv">
+         </div>
+
+      <div id="dayDiv"><a id="3"></a>
   <h2>How many days will you be travelling?</h2>
   <input id="dayInput" type="number" value="1" min="1" max="30" placeholder="1"> </input>
+  <br/>
+  <br/>
+  <button type="button" class="btn btn-primary" onclick="location.href = '#4';">Next</button>
 </div>
 
-
-<div id="monthDiv">
+<div id="monthDiv"><a id="4"></a>
   <h2>Please specify the month you will be travelling in</h2>
   <form action="/action_page.php">
   <select name="Month">
@@ -212,10 +217,13 @@ $(document).ready(function(){
     <option value="november">November</option>
     <option value="december">December</option>
   </select>
+  <br />
+  <br />
+  <button type="button" class="btn btn-primary" onclick="location.href = '#5';">Next</button>
 </div>
 </form>
 
-  <div class="categories">
+  <div class="categories"><a id="5"></a>
 	  <h2>What are you interested in doing during your time on vacation?</h2>
     <form action="">
     <input type="checkbox" name="categoryOne" value="arts and entertainment">Arts and Entertainment<br>
@@ -231,8 +239,6 @@ $(document).ready(function(){
 
 </form>
 </span>
-
-<br>
 
 <div class="itinerary"></div>
 <div class="buttonWrap"><button id="button1" type="button" class="btn btn-primary" onclick="itinerary()">Create my vacation itinerary!</button></div>
