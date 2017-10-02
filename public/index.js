@@ -1,3 +1,29 @@
+//Google Maps Places Autocomplete API from their website
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+  });
+  var card = document.getElementById('pac-card');
+  var input = document.getElementById('pac-input');
+
+  var autocomplete = new google.maps.places.Autocomplete(input);
+
+  var infowindow = new google.maps.InfoWindow();
+  var infowindowContent = document.getElementById('infowindow-content');
+  infowindow.setContent(infowindowContent);
+
+  autocomplete.addListener('place_changed', function() {
+    infowindow.close();
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      // User entered the name of a Place that was not suggested and
+      // pressed the Enter key, or the Place Details request failed.
+      window.alert("No details available for '" + place.name + "'. Please choose a valid city.");
+      return;
+    }
+  });
+};
+
+//main function to show itinerary
 function itinerary() {
   document.getElementById("area1").style.display = "none";
   document.getElementById("button1").val();
@@ -5,29 +31,17 @@ function itinerary() {
   var name = $(".nameInput").val();
   var numDay = $("select[name=Month]").val();
   var length = document.getElementById("dayInput").val();
-/*
-$("#itinerary").val("
-  <th>Your Itinerary for the First Day!</th>
-  <tr>
-    <td>Niagara Falls</td>
-    <td>9:00 AM</td>
-  </tr>
-  <tr>
-    <td>CN Tower</td>
-    <td>10:00 AM</td>
-  </tr>
-  <tr>
-    <td>Royal Ontario Museum</td>
-    <td>12:00 PM</td>
-  </tr>
+  //Get rest of info from form
 
-<th>Your Itinerary for the Second Day!</th>
-  <tr>
-    <td>El Catrin</td>
-    <td>11:00 AM</td>
-  </tr>
-  <tr>
-    <td>Downtown</td>
-    <td>1:00 PM</td>
-  </tr>");*/
+  document.getElementById("main_form").submit(); //form submission
+  //Add code to fill in a table to show the itinerary 
 }
+
+
+//For using jQuery to make divs disappear instead of all one page scrolling
+//Transition from name to name2
+function bClick(name,name2) {
+  document.getElementById("name").style.display = "none";
+  document.getElementById("name2").style.display = "";
+};
+
