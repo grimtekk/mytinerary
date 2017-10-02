@@ -24,27 +24,26 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="index.css" type="text/css"/>
   <script src="index.js"></script>
-
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <!--Calling jQuery Library-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
 
 <body>
 <h1>Mytinerary</h1>
 
-<div id="area1"> <!--Can remove this div if using jQuery to display each invidiual section-->
+<div id="area1"> <!--Might be useful later, encapsulates whole area-->
 
 <!--Will need to add name value to each input type for the action.php-->
 <form id="main_form" action="/action_page.php">
 <div id="nameDiv">
   <h2>What's your name?</h2>
   <input class="nameInput" type="text" value="" placeholder="Name" />
-  <button type="button" class="btn btn-primary" onclick="location.href = '#1';">Next</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('nameDiv','cityDiv');">Next</button>
 </div>
 
-<div id="cityDiv"><a id="1"></a>
+<div id="cityDiv">
   <div class="pac-card" id="pac-card">
     <div><h2>Which city will you be visiting?</h2></div>
     <div id="pac-container">
@@ -56,17 +55,19 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1W0gHh7ubG9bAMAuEsDgtiZWkM9fcP1Y&libraries=places&callback=initMap"
         async defer></script>
 
-  <button type="button" class="btn btn-primary" onclick="location.href = '#2';">Next</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('cityDiv','nameDiv');">Previous</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('cityDiv','dayDiv');">Next</button>
 </div>
 
-<div id="dayDiv"><a id="2"></a>
+<div id="dayDiv">
   <h2>How many days will you be travelling?</h2>
   <input id="dayInput" type="number" value="1" min="1" max="30" placeholder="1" /> </input>
 
-  <button type="button" class="btn btn-primary" onclick="location.href = '#3';">Next</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('dayDiv','cityDiv');">Previous</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('dayDiv','monthDiv');">Next</button>
 </div>
 
-<div id="monthDiv"><a id="3"></a>
+<div id="monthDiv">
   <h2>Which month will you be travelling?</h2>
   <select name="Month">
     <option value="january">January</option>
@@ -84,22 +85,30 @@
   </select>
 
 
-  <button type="button" class="btn btn-primary" onclick="location.href = '#4';">Next</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('monthDiv','dayDiv');">Previous</button>
+  <button type="button" class="btn btn-primary" onclick="bClick('monthDiv','categoryDiv');">Next</button>
 </div>
 
-<div id="categoryDiv"><a id="4"></a>
-  <h2>Which events would you like to do?</h2>
+<div id="categoryDiv">
+  <div id="events">
+    <h2>Which events would you like to do?</h2>
 
-  <button type="button" class="btn btn-primary">Arts and Entertainment</button><br />
-  <button type="button" class="btn btn-primary">Interactive Activities</button><br />
-  <button type="button" class="btn btn-primary">Guided Tours</button><br />
-  <button type="button" class="btn btn-primary">Local Sights and Attractions</button><br />
-  <button type="button" class="btn btn-primary">Nightlife</button><br />
-  <button type="button" class="btn btn-primary">Shopping</button><br />
-  <!--Choose one of the buttons (activities), and then use Yelp API to find popular activity-->
+    <button type="button" class="btn btn-primary">Arts and Entertainment</button><br />
+    <button type="button" class="btn btn-primary">Interactive Activities</button><br />
+    <button type="button" class="btn btn-primary">Guided Tours</button><br />
+    <button type="button" class="btn btn-primary">Local Sights and Attractions</button><br />
+    <button type="button" class="btn btn-primary">Nightlife</button><br />
+    <button type="button" class="btn btn-primary">Shopping</button><br />
+    <!--Choose one of the buttons (activities), and then use Yelp API to find popular activity-->
+  </div>
+
+  <button type="button" class="btn btn-primary" onclick="bClick('categoryDiv','monthDiv');">Previous</button>
+  <br />
+  <!--Find a good place to put the submit button later
+  Only want it to show up at the very end-->
+  <input type="button" name="submit" id="submit_btn" value="Create my vacation itinerary!" onclick="itinerary()"/>
 </div>
 
-<input type="button" name="submit" id="submit_btn" value="Create my vacation itinerary!" onclick="itinerary()"/>
 </form>
 </div> <!--End of area1 div-->
 

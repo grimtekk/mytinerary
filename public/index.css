@@ -37,22 +37,9 @@ h2 {
 
 #nameDiv {
 	padding-top: 100px;
-	height: 768px;
 }
 
-#dayDiv {
-	height: 768px;
-}
-
-#cityDiv {
-	height: 768px;
-}
-
-
-#monthDiv {
-	height: 768px;
-}
-
-.categories{
-	height: 768px;
+#dayDiv, #cityDiv, #monthDiv, #categoryDiv {
+	padding-top: 100px;
+	display: none;
 }

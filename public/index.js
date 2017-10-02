@@ -40,8 +40,9 @@ function itinerary() {
 
 //For using jQuery to make divs disappear instead of all one page scrolling
 //Transition from name to name2
+//Find a better way to get name and name2 (right now not scalable)
 function bClick(name,name2) {
-  document.getElementById("name").style.display = "none";
-  document.getElementById("name2").style.display = "";
+  document.getElementById(name).style.display = "none";
+  document.getElementById(name2).style.display = "block";
 };
 
